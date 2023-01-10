@@ -1,0 +1,119 @@
+*{
+    font-family: "Montserrat",sans-serif;
+}
+
+.name{
+    font-size: 2.7rem;
+    font-weight: 900;
+    color: #195c70;
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.job{
+    font-weight: 300;
+    color: gray;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.headerContainer{
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    margin: 20px;
+}
+
+.headerContainerLeft{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.headerContainerRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.headerContainerRight > p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+p > img{
+    margin-right: 10px;
+}
+
+.line{
+    border-bottom: 3px solid #81aebb;
+    width: 82%;
+    margin-left: 9%;
+    margin-top: 20px;
+}
+
+.about{
+    margin-left: 60px;
+    margin-right: 50px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.title{
+    color:#377ea4;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    margin-left: 60px;
+}
+
+.experience, .education{
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.experienceHeading, .educationHeading{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameDate{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2px;
+    color: #5e5e5e;
+    font-size: 0.7rem;
+}
+
+.nameDate > p{
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.experienceHeading > h4, .educationHeading > h4{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #5e5e5e;
+    font-weight: 600;
+}
+.experience > p, .education > p{
+    font-weight: 500;
+    font-size: 0.7rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

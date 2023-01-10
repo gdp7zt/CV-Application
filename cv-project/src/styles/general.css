@@ -1,0 +1,28 @@
+.inputBox input{
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 20px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.generalSection {
+    margin: 20px 0px;
+}
+
+.inputBox textarea{
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 80px;
+    width: 80%;
+    margin-top: 10px;
+    font-family: "Times New Roman", 'Times New Roman', Times, serif;
+    font-size: 14px;
+}

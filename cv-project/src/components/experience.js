@@ -1,56 +1,73 @@
 import React, { Component } from 'react'
+import '../styles/experience.css'
 
 class Experience extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            edititng: false,
-            cName: '',
-            position: '',
-            description: '',
-            startDateJob: '',
-            endDateJob: '',
+            experienceList: [{
+            cName: 'My First Company',
+            position: 'Software Engineer',
+            description: 'Faucibus purus in massa tempor nec feugiat nisl pretium. Proin fermentum leo vel orci. Adipiscing elit pellentesque habitant morbi tristique senectus et. Laoreet non curabitur gravida arcu ac. Dignissim cras tincidunt lobortis feugiat vivamus. ',
+            startDateJob: '2019',
+            endDateJob: '2023'}]
         };
+        this.props.setExperience(this.state.experienceList);
     }
 
-    handleChange = (event) => {
-        this.setState({[event.target.id]:event.target.value});
+    handleChange = (event, index) => {
+        this.setState({
+            experienceList: this.state.experienceList.map((experience, i) => {
+                if(i === index) {
+                    return {...experience, [event.target.id]: event.target.value};
+                }
+                return experience;
+            })
+        }, () => {
+            this.props.setExperience(this.state.experienceList);
+        });
+    };
+
+    handleAdd = () => {
+        this.setState({
+            experienceList: [
+                ...this.state.experienceList,
+                {
+                    cName: '',
+                    position: '',
+                    description: '',
+                    startDateJob: '',
+                    endDateJob: '',
+                }
+            ]
+        }, () => {
+            this.props.setExperience(this.state.experienceList);
+        });
+    };
+
+    handleDelete = (index) => {
+        this.setState({
+            experienceList: this.state.experienceList.filter((experience, i) => i !== index)
+        }, () => {
+            this.props.setExperience(this.state.experienceList);
+        })
     }
 
     render() {
         return(
-                <div>
-                {this.state.editing ? (
-                        <div>
-                            <div>{this.state.cName}</div>
-                            <div>{this.state.position}</div>
-                            <div>{this.state.description}</div>
-                            <div>{this.state.startDateJob}</div>
-                            <div>{this.state.endDateJob}</div>
-                            <button onClick = {() => {this.setState({ editing: false})}}>Edit</button>
+                <div class = 'experienceSection'>
+                    {this.state.experienceList.map((experience, index) => (
+                        <div key={index} className = 'inputBox'>
+                            <input type='text' placeholder = 'Company Name' value = {experience.cName} onChange = {(event) => this.handleChange(event, index)} id='cName'></input>
+                            <input type='text' placeholder = 'Position' value = {experience.position} onChange = {(event) => this.handleChange(event, index)} id='position'></input>
+                            <input type='text' placeholder = 'Start Date' value = {experience.startDateJob} onChange = {(event) => this.handleChange(event, index)} id='startDateJob'></input>
+                            <input type='text' placeholder = 'End Date' value = {experience.endDateJob} onChange = {(event) => this.handleChange(event, index)} id='endDateJob'></input>
+                            <textarea placeholder = 'Description' value = {experience.description} onChange = {(event) => this.handleChange(event, index)} id='description'></textarea>
+                            <button onClick={() => this.handleDelete(index)}>Delete</button>
                         </div>
-                    ) : (
-                        <div>
-                            <label htmlFor = 'cName'>Company Name: </label>
-                            <input type='text' value={this.state.cName} onChange={this.handleChange} id='cName'></input>
-
-                            <label htmlFor = 'position'>Position: </label>
-                            <input type='text' value={this.state.position} onChange={this.handleChange} id='position'></input>
-
-                            <label htmlFor = 'description'> Description: </label>
-                            <input type='text' value={this.state.description} onChange={this.handleChange} id='description'></input>
-
-                            <label htmlFor = 'startDateJob'>Start Date: </label>
-                            <input type='date' value={this.state.startDateJob} onChange={this.handleChange} id='startDateJob'></input>
-
-                            <label htmlFor = 'endDateJob'>End Date: </label>
-                            <input type='date' value={this.state.endDateJob} onChange={this.handleChange} id='endDateJob'></input>
-
-                            <button onClick = {() => {this.setState({editing: true})}}> Done </button>
-                        </div>
-                    
-                    )}
+                    ))}
+                    <button onClick = {this.handleAdd} class='addButton'>Add</button>
                 </div>
         )
     }
