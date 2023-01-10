@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/CV-Application/static/css/main.eb9248e1.css",
+    "main.js": "/CV-Application/static/js/main.477aba17.js",
+    "static/js/703.01c4d2e6.chunk.js": "/CV-Application/static/js/703.01c4d2e6.chunk.js",
+    "static/js/635.b84e373b.chunk.js": "/CV-Application/static/js/635.b84e373b.chunk.js",
+    "static/media/location-sign-svgrepo-com.svg": "/CV-Application/static/media/location-sign-svgrepo-com.351870b901810823cc7db9f86f4e54f8.svg",
+    "index.html": "/CV-Application/index.html",
+    "static/media/mail-svgrepo-com.svg": "/CV-Application/static/media/mail-svgrepo-com.e3176014ae16e64b19204bbf1ab42b5e.svg",
+    "static/media/phone-svgrepo-com.svg": "/CV-Application/static/media/phone-svgrepo-com.eb89e5770c6471c6661292d79dfbaff1.svg",
+    "main.eb9248e1.css.map": "/CV-Application/static/css/main.eb9248e1.css.map",
+    "main.477aba17.js.map": "/CV-Application/static/js/main.477aba17.js.map",
+    "703.01c4d2e6.chunk.js.map": "/CV-Application/static/js/703.01c4d2e6.chunk.js.map",
+    "635.b84e373b.chunk.js.map": "/CV-Application/static/js/635.b84e373b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb9248e1.css",
+    "static/js/main.477aba17.js"
+  ]
+}
