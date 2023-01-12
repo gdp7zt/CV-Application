@@ -1,33 +1,32 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import '../styles/resume.css';
 import mail from '../imgs/mail-svgrepo-com.svg';
 import phone from '../imgs/phone-svgrepo-com.svg';
 import locations from '../imgs/location-sign-svgrepo-com.svg';
 
-class Resume extends Component {
-    render() {
-        const {fName, email, phoneNumber, job, location, about, education, experience} = this.props;
+function Resume(props) {
+        const {fName, email, phoneNumber, job, location, about, education, experience} = props;
         return (
             <div>
-                <div class='headerContainer'>
-                    <div class='headerContainerLeft'>
-                        <h1 class='name'>{fName}</h1>
-                        <h2 class='job'>{job}</h2>
+                <div className='headerContainer'>
+                    <div className='headerContainerLeft'>
+                        <h1 className='name'>{fName}</h1>
+                        <h2 className='job'>{job}</h2>
                     </div>
-                    <div class='headerContainerRight'>
+                    <div className='headerContainerRight'>
                         <p><img src={mail} width='20px'></img> {email}</p>
                         <p><img src={phone} width='20px'></img>{phoneNumber}</p>
                         <p><img src={locations} width='20px'></img> {location}</p>
                     </div>
                 </div>
-                <div class='line'></div>
-                <p class='about'>{about}</p>
-                <h3 class='title'>Experience</h3>
+                <div className='line'></div>
+                <p className='about'>{about}</p>
+                <h3 className='title'>Experience</h3>
                 {experience.map((exp) => (
-                    <div class='experience'key={exp.cName}> 
-                        <div class='experienceHeading'>
+                    <div className='experience'key={exp.id}> 
+                        <div className='experienceHeading'>
                             <h4>{exp.position}</h4>
-                            <div class="nameDate">
+                            <div className="nameDate">
                                 {exp.cName} |
                                 <p>{exp.startDateJob} -- {exp.endDateJob}</p>
                             </div>
@@ -35,12 +34,12 @@ class Resume extends Component {
                         <p>{exp.description}</p>
                     </div>
                 ))}
-                <h3 class='title'>Education</h3>
+                <h3 className='title'>Education</h3>
                 {education.map((edu) => (
-                    <div class='education' key={edu.schoolName}>
-                        <div class='educationHeading'>
+                    <div className='education' key={edu.id}>
+                        <div className='educationHeading'>
                             <h4>{edu.degree}</h4>
-                            <div class='nameDate'>
+                            <div className='nameDate'>
                                 {edu.schoolName} |
                                 <p>{edu.startDate} - {edu.endDate}</p>
                             </div>
@@ -50,7 +49,6 @@ class Resume extends Component {
                 ))}
             </div>
         );
-    }
 }
 
 export default Resume;

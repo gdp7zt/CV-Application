@@ -34,9 +34,9 @@ function Main() {
   const [experience, setExperience] = useState([]);
 
   return (
-    <div class='wholePage'>
-      <div class='mainContainer'>
-        <div class='box'>
+    <div className='wholePage'>
+      <div className='mainContainer'>
+        <div className='box'>
           <h2>Personal Information</h2>
             <General setName={setName} setEmail = {setEmail} setPhone = {setPhone} setJob = {setJob} setLocation = {setLocation} setAbout = {setAbout}/>
             <h2>Experience</h2>
@@ -44,14 +44,14 @@ function Main() {
             <h2>Education</h2>
             <Education setEducation = {setEducation}/>
         </div>
-        <div class='resumeBox'>
-          <div class="resume">
+        <div className='resumeBox'>
+          <div className="resume">
               <Resume fName={fName} email={email} phoneNumber={phoneNumber} job={job} location={location} about={about} education={education} experience={experience}/>
           </div>
-          <button onClick={downloadPDF} class='printButton'>Download PDF</button>
+          <button onClick={downloadPDF} className='printButton'>Download PDF</button>
         </div>
       </div>
-      <div class='footer'>
+      <div className='footer'>
             <h4>Copyright 2022 gdp7zt
                 <a href="https://github.com/gdp7zt/CV-Application" target="_blank">
                     <img src={GitHub} alt="Github Logo"></img>
